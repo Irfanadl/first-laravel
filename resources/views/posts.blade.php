@@ -5,19 +5,19 @@
         </div>
         <div class="grid md:grid-cols-3 auto-rows-max gap-8">
         @foreach ($posts as $posts)
-            <a href="/posts/{{ $posts -> slug }}" class="shadow-md">
+            <a href="/posts/{{ $posts->slug }}" class="shadow-md">
                 <div class="block p-3">
                     <div class="flex justify-between">
                         <h1 class="font-semibold">
-                            {{ $posts -> title }}
+                            {{ $posts->title }}
                         </h1>
                         <p class="font-extralight text-xs">
-                            {{ $posts -> category -> name }}
+                            {{ $posts->category->name }}
                         </p>
                     </div>
                     
                     <p class="font-light text-sm">
-                        {{ $posts -> excerpt }}
+                        {{ $posts->excerpt }}
                     </p>
                 </div>
             </a>
