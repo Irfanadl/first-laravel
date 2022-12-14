@@ -26,7 +26,7 @@ Route::get('/home', function () {
 
 Route::get('/posts', function () {
     return view('posts', [
-        'posts' => Post::latest()->with('category')->get()
+        'posts' => Post::latest()->get()
     ]);
 });
 
