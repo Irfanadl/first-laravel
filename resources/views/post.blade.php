@@ -2,7 +2,7 @@
     <div class="relative container mx-auto p-6 pt-8">
         <div class="block">
             <p class="font-extralight text-xs">
-                By <a href="#">{{ $post->user->name }}</a> in <a href="/categories/{{ $post->category->slug }}">{{ $post -> category -> name }}</a>
+                By <a href="/author/{{ $post->author->username }}">{{ $post->author->name }}</a> in <a href="/categories/{{ $post->category->slug }}">{{ $post -> category -> name }}</a>
             </p>
             
             <h1 class="font-bold text-2xl pb-3">
