@@ -1,27 +1,18 @@
 <x-layout>
-    <div class="relative container mx-auto p-6">
-        <div class="text-center mb-8">
-            <h1 class="text-xl tracking-wide uppercase overline">Articles</h1>
+    @include('_posts-header')
+    
+    <main class="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6">
+        <x-post-featured-card />
+
+        <div class="lg:grid lg:grid-cols-2">
+            <x-post-card />
+            <x-post-card />
         </div>
-        <div class="grid md:grid-cols-3 auto-rows-max gap-8">
-        @foreach ($posts as $posts)
-            <a href="/posts/{{ $posts->slug }}" class="shadow-md">
-                <div class="block p-3">
-                    <div class="flex justify-between">
-                        <h1 class="font-semibold">
-                            {{ $posts->title }}
-                        </h1>
-                        <p class="font-extralight text-xs">
-                            {{ $posts->category->name }}
-                        </p>
-                    </div>
-                    
-                    <p class="font-light text-sm">
-                        {{ $posts->excerpt }}
-                    </p>
-                </div>
-            </a>
-        @endforeach
+
+        <div class="lg:grid lg:grid-cols-3">
+            <x-post-card />
+            <x-post-card />
+            <x-post-card />
         </div>
-    </div>
+    </main>
 </x-layout>
