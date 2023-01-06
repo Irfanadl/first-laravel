@@ -14,9 +14,13 @@
                            type="text"
                            id="name"
                            name="name"
-                           value=""
+                           value="{{ old('name') }}"
                            required
                     >
+
+                    @error("name")
+                        <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                    @enderror
                 </div>
 
 
@@ -30,9 +34,13 @@
                            type="text"
                            id="username"
                            name="username"
-                           value=""
+                           value="{{ old('username') }}"
                            required
                     >
+
+                    @error("username")
+                        <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                    @enderror
                 </div>
 
 
@@ -46,9 +54,13 @@
                            type="email"
                            id="email"
                            name="email"
-                           value=""
+                           value="{{ old('email') }}"
                            required
                     >
+
+                    @error("email")
+                        <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                    @enderror
                 </div>
 
 
@@ -65,6 +77,10 @@
                            value=""
                            required
                     >
+
+                    @error("password")
+                        <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                    @enderror
                 </div>
 
 
@@ -74,6 +90,14 @@
                         Submit
                     </button>
                 </div>
+                
+                {{-- @if ($errors->any())
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li class="text-red-500 text-xs">{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                @endif --}}
             </form>
         </main>
     </section>
